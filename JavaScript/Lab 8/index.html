@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="form signup">
+        <header>Sign Up</header>
+        <form id="signup-form" action="#" >
+          <div class="error-text"></div>
+          <div class="name-details">
+            <div class="field input">
+              <label>First Name</label>
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                placeholder="First name"
+                required
+              />
+            </div>
+            <div class="field input">
+              <label>Last Name</label>
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                placeholder="Last name"
+                required
+              />
+            </div>
+          </div>
+          <div class="field input">
+            <label>Email Address</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="field input">
+            <label>Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter new password"
+              required
+            />
+            <i class="fas fa-eye"></i>
+          </div>
+          <div class="field button">
+            <input type="submit" name="submit" value="Continue..." />
+          </div>
+        </form>
+        <div class="link">
+          Already signed up? <a href="./login.html">Login now</a>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      document
+        .getElementById("signup-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          saveData();
+        });
+
+      function saveData() {
+        let fname = document.getElementById("fname").value;
+        let lname = document.getElementById("lname").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let user_record = JSON.parse(localStorage.getItem("users")) || [];
+
+        if (user_record.some((user) => user.Email === email)) {
+          alert("Email already registered.");
+        } else {
+          user_record.push({
+            Fname: fname,
+            Lname: lname,
+            Email: email,
+            Password: password,
+          });
+          localStorage.setItem("users", JSON.stringify(user_record));
+          alert("Registration successful!");
+          window.location.href = "./login.html";
+        }
+      }
+    </script>
+  </body>
+</html>

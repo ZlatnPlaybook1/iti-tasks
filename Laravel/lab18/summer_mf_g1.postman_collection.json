@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "07757302-fdc1-47ee-86a4-7b5e2ebea6f5",
+		"name": "summer_mf_g1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27840748"
+	},
+	"item": [
+		{
+			"name": "update student data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "yyyyyyyyy",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Softlaptop/Pictures/Screenshots/Screenshot (167).png"
+						},
+						{
+							"key": "_method",
+							"value": "put",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/4?name=hello&age=25&image&-method=put",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						"4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "hello"
+						},
+						{
+							"key": "age",
+							"value": "25"
+						},
+						{
+							"key": "image",
+							"value": null
+						},
+						{
+							"key": "-method",
+							"value": "put"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get single student",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/students/4"
+			},
+			"response": []
+		},
+		{
+			"name": "delete student",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/students/6"
+			},
+			"response": []
+		},
+		{
+			"name": "get all students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/students"
+			},
+			"response": []
+		},
+		{
+			"name": "add new student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "new student api",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "18",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "male",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "stdentApi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "cairo",
+							"type": "text"
+						},
+						{
+							"key": "track_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "grade",
+							"value": "60",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Softlaptop/Pictures/Screenshots/Screenshot (165).png"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/students"
+			},
+			"response": []
+		}
+	]
+}

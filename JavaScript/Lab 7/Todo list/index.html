@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 7</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #868df2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        text-align: center;
+        background-color: #eadcf8;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #5a4b81;
+      }
+      input[type="text"] {
+        padding: 10px;
+        width: 300px;
+        border: 2px solid #eee;
+        border-radius: 5px;
+        margin-right: 10px;
+        outline: none;
+      }
+      button {
+        padding: 10px;
+        border: none;
+        background-color: #4953e0;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #4953e0;
+      }
+      .task {
+        background-color: #4953e0;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .task button {
+        background-color: #b13636;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo List App</h1>
+      <input type="text" id="taskInput" placeholder="Enter your task ..." />
+      <button onclick="Task()">Add</button>
+      <div id="taskList"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

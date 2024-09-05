@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="form login">
+        <header>Login</header>
+        <form id="login-form" action="#">
+          <div class="error-text"></div>
+          <div class="field input">
+            <label>Email Address</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="field input">
+            <label>Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+            <i class="fas fa-eye"></i>
+          </div>
+          <div class="field button">
+            <input type="submit" name="submit" value="Submit" />
+          </div>
+        </form>
+        <div class="link">
+          Not yet signed up? <a href="index.php">Signup now</a>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          saveData();
+        });
+
+      function saveData() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let user_record = JSON.parse(localStorage.getItem("users")) || [];
+
+        if (
+          user_record.some((v) => v.Email === email && v.Password === password)
+        ) {
+          alert("Login Successful");
+          let current_user = user_record.filter(
+            (v) => v.Email === email && v.Password === password
+          )[0];
+          localStorage.setItem("name", current_user.Fname);
+          localStorage.setItem("email", current_user.Email);
+          window.location.href = "./Fake API Product/index.html";
+        } else {
+          alert("Login Failed!!!!");
+        }
+      }
+    </script>
+  </body>
+</html>
